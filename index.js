@@ -19,9 +19,9 @@ const update = function(){
 const updateFirstName = function(){
 const header  = document.querySelector("#firstName")
 if(count2%2==0)
-header.textContent = "Sehaj"
+header.textContent = "Chris Evans"
 else
-header.textContent = "Sehajbir"
+header.textContent = "Chris Hemsworth"
 count2++
 }
 
