@@ -30,6 +30,7 @@ const submitF  =  function(){
     const header = document.querySelector("#lastName")
     const textField = document.querySelector("#textField")
     header.textContent = textField.value
+    event.preventDefault()
 }
 
 
