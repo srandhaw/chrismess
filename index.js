@@ -1,6 +1,7 @@
 const button = document.querySelector('button')
 const firstNameButton =  document.querySelector('#butt2')
 const submitBtn  = document.querySelector('#textFieldBtn')
+const form =document.querySelector('form')
 var count = 0
 var count2  = 0
 
@@ -27,10 +28,17 @@ count2++
 
 
 const submitF  =  function(){
-    const header = document.querySelector("#lastName")
+    
     const textField = document.querySelector("#textField")
-    header.textContent = textField.value
+    
     event.preventDefault()
+
+    const list =  document.querySelector('#flicks')
+    const item =  document.createElement('li')
+    item.textContent =  textField.value
+    list.appendChild(item)
+    form.reset()
+    
 }
 
 
