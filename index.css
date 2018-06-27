@@ -4,3 +4,12 @@
 body{
     font-family:'Lato', Helvetica, Arial, sans-serif
 }
+
+#flicks{
+color: blueviolet;
+
+}
+
+#year{
+    color: darkslategray;
+}

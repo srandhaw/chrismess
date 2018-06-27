@@ -30,6 +30,7 @@ count2++
 const submitF  =  function(){
     
     const textField = document.querySelector("#textField")
+    const textField2  =  document.querySelector("#textField2")
     
     event.preventDefault()
 
@@ -37,8 +38,21 @@ const submitF  =  function(){
     const item =  document.createElement('li')
     item.textContent =  textField.value
     list.appendChild(item)
+    list2(textField2.value)
+
+
     form.reset()
     
+}
+
+const list2 = function(child){
+
+const item =   document.createElement('li')
+item.textContent = child
+const list = document.querySelector('#year')
+list.appendChild(item)
+
+
 }
 
 
