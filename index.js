@@ -71,6 +71,19 @@ class App{
         
     
         const item = this.addList(cspan1,cspan2)
+
+        const favoriteBtn  = document.createElement('button')
+        favoriteBtn.textContent = "Favorite"
+        item.appendChild(favoriteBtn)
+        
+        favoriteBtn.addEventListener('click',(ev)=>{
+            this.form.reset()
+            item.style.backgroundColor = "grey"
+            this.favoriteArray.push(cspan1.textContent + cspan2.textContent)
+            console.log(this.favoriteArray)
+        
+       
+        })
     
         const delBtn = document.createElement('button')
         delBtn.textContent = "Delete"
@@ -80,6 +93,7 @@ class App{
             itemTemp.appendChild(cspan1)
             itemTemp.appendChild(cspan2)
             itemTemp.appendChild(delBtn)
+            itemTemp.appendChild(favoriteBtn)
             this.listArray.splice(this.listArray.indexOf(cspan1.textContent + cspan2.textContent),1)
             console.log(this.listArray)
             try{
@@ -94,18 +108,7 @@ class App{
         })
         item.appendChild(delBtn)  
 
-        const favoriteBtn  = document.createElement('button')
-        favoriteBtn.textContent = "Favorite"
-        item.appendChild(favoriteBtn)
-        
-        favoriteBtn.addEventListener('click',(ev)=>{
-            this.form.reset()
-            item.style.backgroundColor = "grey"
-            this.favoriteArray.push(cspan1.textContent + cspan2.textContent)
-            console.log(this.favoriteArray)
-        
        
-        })
 
         
        
