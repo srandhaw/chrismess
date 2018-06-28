@@ -14,6 +14,7 @@ class App{
     var count = 0
     var count2  = 0
  this.listArray = []
+ this.favoriteArray = []
 
 //Event listeners
     button.addEventListener('click',this.update)
@@ -91,7 +92,22 @@ class App{
            
             return
         })
-        item.appendChild(delBtn)
+        item.appendChild(delBtn)  
+
+        const favoriteBtn  = document.createElement('button')
+        favoriteBtn.textContent = "Favorite"
+        item.appendChild(favoriteBtn)
+        
+        favoriteBtn.addEventListener('click',(ev)=>{
+            this.form.reset()
+            item.style.backgroundColor = "grey"
+            this.favoriteArray.push(cspan1.textContent + cspan2.textContent)
+            console.log(this.favoriteArray)
+        
+       
+        })
+
+        
        
         
         mainList.appendChild(item)
