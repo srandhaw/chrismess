@@ -1,3 +1,8 @@
+var count = 0
+var count2  = 0
+
+
+
 class App{
 
     constructor(){
@@ -11,8 +16,7 @@ class App{
     const span1 =  document.querySelector('#flick')
         const span2 =  document.querySelector('#year')
     
-    var count = 0
-    var count2  = 0
+   
  this.listArray = []
  this.favoriteArray = []
 
@@ -78,8 +82,19 @@ class App{
         
         favoriteBtn.addEventListener('click',(ev)=>{
             this.form.reset()
+            var favAdd  = true
             item.style.backgroundColor = "grey"
-            this.favoriteArray.push(cspan1.textContent + cspan2.textContent)
+            
+
+            this.favoriteArray.forEach(function(element){
+                
+                if(element == (cspan1.textContent + cspan2.textContent) ){
+                    
+                    favAdd = false
+                }
+            })
+            if(favAdd){this.favoriteArray.push(cspan1.textContent + cspan2.textContent)}
+            
             console.log(this.favoriteArray)
         
        
@@ -97,7 +112,7 @@ class App{
             this.listArray.splice(this.listArray.indexOf(cspan1.textContent + cspan2.textContent),1)
             console.log(this.listArray)
             try{
-            // mainList.childNodes[this.listArray.indexOf(cspan1.textContent + cspan2.textContent)].style.
+            
                 mainList.removeChild(mainList.childNodes[this.listArray.indexOf(cspan1.textContent + cspan2.textContent)])
             }catch(err){
 
