@@ -5,3 +5,7 @@ body{
     font-family:'Lato', Helvetica, Arial, sans-serif
 }
 
+#mainList{
+    list-style-type: none;
+}
+

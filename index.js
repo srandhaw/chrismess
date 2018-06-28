@@ -71,7 +71,27 @@ class App{
     
         const item = this.addList(cspan1,cspan2)
     
-        
+        const delBtn = document.createElement('button')
+        delBtn.textContent = "Delete"
+        delBtn.addEventListener('click',(ev)=>{
+            this.form.reset()
+            const itemTemp = document.createElement('li')
+            itemTemp.appendChild(cspan1)
+            itemTemp.appendChild(cspan2)
+            itemTemp.appendChild(delBtn)
+            this.listArray.splice(this.listArray.indexOf(cspan1.textContent + cspan2.textContent),1)
+            console.log(this.listArray)
+            try{
+            // mainList.childNodes[this.listArray.indexOf(cspan1.textContent + cspan2.textContent)].style.
+                mainList.removeChild(mainList.childNodes[this.listArray.indexOf(cspan1.textContent + cspan2.textContent)])
+            }catch(err){
+
+            }
+            
+           
+            return
+        })
+        item.appendChild(delBtn)
        
         
         mainList.appendChild(item)
@@ -87,8 +107,7 @@ class App{
         item.appendChild(span2)
         this.listArray.push(item.textContent)
         console.log(this.listArray)
-        const delBtn = document.createElement('button')
-        item.appendChild(delBtn)
+        
         return item
     }
     
